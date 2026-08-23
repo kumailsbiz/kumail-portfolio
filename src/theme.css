@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-500: #9b9797;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+
+  --color-accent-100: #fff2ef;
+  --color-accent-200: #ffe0d9;
+  --color-accent-700: #ae1800;
+  --color-accent-800: #7c1405;
+  --color-accent-900: #4d170e;
+
+  --font-heading: "Archivo", system-ui, sans-serif;
+  --font-body: "Archivo", system-ui, sans-serif;
+
+  --radius: 0px;
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+
+  --max-width: 1360px;
+  --page-pad: clamp(20px, 4vw, 48px);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #151413;
+  --color-surface: #1e1c1b;
+  --color-text: #f3f2f2;
+  --color-divider: color-mix(in srgb, #f3f2f2 38%, transparent);
+  --color-accent-700: color-mix(in srgb, #ec3013 62%, #fff);
+  --color-accent-100: #2a1a16;
+  --color-accent-200: #4d170e;
+  --color-neutral-100: #2d2b2b;
+  --color-neutral-200: #3a3736;
+  --color-neutral-300: #4d4a49;
+  --color-neutral-500: #9b9797;
+  --color-neutral-700: #c9c5c5;
+  --color-neutral-800: #eae7e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-accent-700);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-accent-200);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.grayscale {
+  filter: grayscale(1) contrast(1.08);
+}
+
+@keyframes om-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes om-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes om-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 12px 22px;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn svg {
+  display: block;
+  flex: none;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--color-accent-700);
+  color: #fff;
+}
+.btn-secondary {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+.btn-secondary:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+.btn-ghost {
+  color: var(--color-text);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.btn-ghost:hover {
+  color: var(--color-accent);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+}
+.tag-outline {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+.tag-neutral {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-800);
+}
+
+[data-nav]::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  [data-hero-grid] {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+  [data-hero-portrait] {
+    max-width: 340px;
+  }
+  [data-two-col] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 860px) {
+  [data-nav] {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
