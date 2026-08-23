@@ -17,29 +17,23 @@ export const profile = {
 
 export const flagshipCase = {
   eyebrow: "Flagship result",
-  title: "UAE & KSA Performance Marketing — 1+ Year",
+  title: "UAE & KSA Performance Marketing — 3.7+ Years",
   subhead:
-    "Cumulative Google Ads performance across the UAE and Saudi Arabia — one ongoing program, run and optimized continuously for more than a year. Not a single campaign, and not a short-term promotion.",
+    "Cumulative Google Ads performance across the UAE and Saudi Arabia — one ongoing program, run and optimized continuously for more than 3.7 years. Not a single campaign, and not a short-term promotion.",
   markets: [
     { flag: "🇦🇪", code: "UAE", name: "United Arab Emirates" },
     { flag: "🇸🇦", code: "KSA", name: "Saudi Arabia" },
   ],
   channel: "Google Ads / PPC",
-  period: "1+ year",
-  chain: ["UAE + KSA", "1+ Year", "AED 12K Ad Spend", "AED 400K Sales", "33.3× ROAS"],
+  period: "3.7+ years",
+  chain: ["UAE + KSA", "3.7+ Years", "3% ACoS", "33.3× ROAS"],
   headline: "33.3× ROAS · 3% ACoS · 3,233% Ad-Spend ROI",
   kpis: [
-    { value: 400000, prefix: "AED ", label: "Sales generated" },
-    { value: 12000, prefix: "AED ", label: "Total ad spend" },
     { value: 33.33, decimals: 2, suffix: "×", label: "ROAS" },
     { value: 3, suffix: "%", label: "ACoS" },
     { value: 3233.33, decimals: 2, suffix: "%", label: "Ad-spend ROI" },
     { value: 33.33, decimals: 2, suffix: "×", label: "Revenue multiple" },
   ],
-  net: {
-    value: "AED 388,000",
-    note: "Net after ad spend — before product costs, platform fees, shipping, and other business expenses.",
-  },
   timeline: [
     {
       phase: "Launch",
@@ -68,12 +62,12 @@ export const flagshipCase = {
     },
     {
       phase: "Sustained growth",
-      title: "1+ year, AED 400K cumulative",
-      body: "Results compounding over the full period — AED 400,000 in sales from AED 12,000 in ad spend, cumulative across the UAE and KSA.",
+      title: "3.7+ years, cumulative results",
+      body: "Results compounding over the full period — a sustained 33×+ return on ad spend, held across the UAE and KSA rather than a single spike.",
     },
   ],
   disclaimer:
-    "All figures are cumulative results from an ongoing Google Ads program across the UAE and KSA over 1+ year — not the output of a single campaign or short-term promotion.",
+    "All figures are cumulative results from an ongoing Google Ads program across the UAE and KSA over 3.7+ years — not the output of a single campaign or short-term promotion.",
 };
 
 export const stats = [
@@ -230,6 +224,54 @@ export const tools = [
 export const caseStudies = [
   {
     id: "C1",
+    title: "Insta360 UAE — official brand storefront",
+    meta: "insta360.ae · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
+    role: "Storefront owner and performance lead — Shopify build, catalog, paid media, SEO and tracking for the official Insta360 UAE store.",
+    challenge:
+      "A single-brand flagship inside a 51-brand portfolio: the 360°, action camera and gimbal catalog, seasonal bundles and paid campaigns all have to read as premium and stay in step with Insta360's own product drops.",
+    approach: [
+      "Shopify storefront built and maintained, including custom Liquid sections for product bundles and category landers.",
+      "Catalog and pricing kept current across 360 cameras, action cameras, gimbals and accessories as new models launch.",
+      "Google Ads and paid social campaigns planned, launched and optimized to drive qualified traffic to camera and bundle pages.",
+      "On-site SEO and GA4/GTM tracking implemented to connect campaign spend to storefront performance.",
+    ],
+    scope: null,
+    result: null,
+    tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
+    imageId: "case-insta360-uae",
+    images: [
+      { src: "assets/case-studies/insta360-home.jpg", caption: "Storefront — insta360.ae" },
+      {
+        src: "assets/case-studies/insta360-product.jpg",
+        caption: "Product page — Insta360 Luna Ultra",
+      },
+    ],
+    imagePlaceholder: "Drop an Insta360.ae storefront screenshot",
+    cta: { label: "Visit insta360.ae", href: "https://insta360.ae/" },
+  },
+  {
+    id: "C2",
+    title: "Insta360 KSA — official brand storefront",
+    meta: "insta360ksa.com · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
+    role: "Storefront owner and performance lead — Shopify build, catalog, paid media, SEO and tracking for the official Insta360 Saudi Arabia store.",
+    challenge:
+      "The same Insta360 catalog and brand standard, stood up as its own storefront for the Saudi market — separate currency, delivery and support details, without drifting from the UAE store's structure and pace of product launches.",
+    approach: [
+      "Shopify storefront built and maintained for the Saudi market, mirroring the UAE store's Liquid sections and catalog structure.",
+      "Catalog and pricing kept current in SAR across 360 cameras, action cameras, gimbals and accessories.",
+      "Google Ads campaigns planned, launched and optimized for the KSA audience alongside the UAE program.",
+      "On-site SEO and GA4/GTM tracking implemented to measure the Saudi storefront on its own terms.",
+    ],
+    scope: null,
+    result: null,
+    tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
+    imageId: "case-insta360-ksa",
+    image: "assets/case-studies/insta360ksa.jpg",
+    imagePlaceholder: "Drop an Insta360ksa.com storefront screenshot",
+    cta: { label: "Visit insta360ksa.com", href: "https://insta360ksa.com/" },
+  },
+  {
+    id: "C3",
     title: "Multi-brand catalog operations at scale",
     meta: "SHIFT · Shopify, Liquid, ERP, GA4 · Oct 2025 – Present",
     role: "Senior E-Commerce, Digital Marketing & Web Development Executive — owner of the storefront, the catalog and the paid search behind it.",
@@ -254,7 +296,7 @@ export const caseStudies = [
     cta: null,
   },
   {
-    id: "C2",
+    id: "C4",
     title: "Marketplace operations across the Gulf",
     meta: "SWIN · Amazon, Noon, Trendyol, Dragon Mart · Apr 2023 – Oct 2025",
     role: "E-Commerce, Digital Marketing & Web Development Executive for a furniture and automotive group — two brand portfolios, both channels and both sites.",
@@ -284,7 +326,7 @@ export const caseStudies = [
     cta: null,
   },
   {
-    id: "C3",
+    id: "C5",
     title: "One reliable tracking layer",
     meta: "SWIN · GA4, GTM, Meta Pixel · 2023 – 2025",
     role: "Implementation owner — measurement design, tag build and reporting cadence.",
@@ -305,7 +347,7 @@ export const caseStudies = [
     cta: null,
   },
   {
-    id: "C4",
+    id: "C6",
     title: "Front-end, CRO and the code I ship",
     meta: "Liquid, HTML5/CSS3, React · 2021 – Present",
     role: "Builder — the person who writes the section rather than filing a ticket for it.",
@@ -329,34 +371,7 @@ export const caseStudies = [
     },
   },
   {
-    id: "C5",
-    title: "Insta360 UAE — official brand storefront",
-    meta: "insta360.ae · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
-    role: "Storefront owner and performance lead — Shopify build, catalog, paid media, SEO and tracking for the official Insta360 UAE store.",
-    challenge:
-      "A single-brand flagship inside a 51-brand portfolio: the 360°, action camera and gimbal catalog, seasonal bundles and paid campaigns all have to read as premium and stay in step with Insta360's own product drops.",
-    approach: [
-      "Shopify storefront built and maintained, including custom Liquid sections for product bundles and category landers.",
-      "Catalog and pricing kept current across 360 cameras, action cameras, gimbals and accessories as new models launch.",
-      "Google Ads and paid social campaigns planned, launched and optimized to drive qualified traffic to camera and bundle pages.",
-      "On-site SEO and GA4/GTM tracking implemented to connect campaign spend to storefront performance.",
-    ],
-    scope: null,
-    result: null,
-    tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
-    imageId: "case-insta360",
-    images: [
-      { src: "assets/case-studies/insta360-home.jpg", caption: "Storefront — insta360.ae" },
-      {
-        src: "assets/case-studies/insta360-product.jpg",
-        caption: "Product page — Insta360 Luna Ultra",
-      },
-    ],
-    imagePlaceholder: "Drop an Insta360.ae storefront screenshot",
-    cta: { label: "Visit insta360.ae", href: "https://insta360.ae/" },
-  },
-  {
-    id: "C6",
+    id: "C7",
     title: "DXB.net — multi-brand tech & lifestyle store",
     meta: "dxb.net · Shopify, Liquid, Google Ads, Meta, TikTok · SHIFT portfolio",
     role: "Storefront owner and performance lead — Shopify build, merchandising and paid media across a multi-brand catalog.",
@@ -377,7 +392,7 @@ export const caseStudies = [
     cta: { label: "Visit dxb.net", href: "https://dxb.net/" },
   },
   {
-    id: "C7",
+    id: "C8",
     title: "Xgimi UAE — official brand storefront",
     meta: "xgimi.ae · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
     role: "Storefront owner and performance lead — Shopify build, catalog and paid media for the official Xgimi UAE store.",
