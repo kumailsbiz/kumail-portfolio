@@ -5,8 +5,8 @@ import useTilt from "../hooks/useTilt";
 import { getGsap } from "../lib/motion";
 
 const ICON_PROPS = {
-  width: 22,
-  height: 22,
+  width: 28,
+  height: 28,
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
@@ -84,12 +84,16 @@ const ICONS = {
 };
 
 function SkillCell({ s, i }) {
-  const tiltRef = useTilt({ max: 5, scale: 1.02 });
+  const tiltRef = useTilt({ max: 6, scale: 1.025 });
+  const index = String(i + 1).padStart(2, "0");
   return (
     <div className="skill-cell" ref={tiltRef}>
+      <span className="skill-watermark" aria-hidden="true">
+        {index}
+      </span>
       <div className="skill-cell-top">
         <span className="skill-icon">{ICONS[s.title]}</span>
-        <span className="skill-index">{String(i + 1).padStart(2, "0")}</span>
+        <span className="skill-index">{index}</span>
       </div>
       <h3>{s.title}</h3>
       <p>{s.body}</p>
