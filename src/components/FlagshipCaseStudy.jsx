@@ -78,13 +78,6 @@ export default function FlagshipCaseStudy() {
           ))}
         </div>
 
-        {/* Net callout */}
-        <Reveal as="div" className="flagship-net">
-          <span className="flagship-net-value">{fc.net.value}</span>
-          <span className="flagship-net-label">Net after ad spend</span>
-          <span className="flagship-net-note">{fc.net.note}</span>
-        </Reveal>
-
         {/* Markets panel */}
         <div className="market-panel">
           <MarketTile m={fc.markets[0]} i={0} />
@@ -97,7 +90,7 @@ export default function FlagshipCaseStudy() {
 
         {/* Timeline */}
         <Reveal as="p" className="flagship-timeline-label">
-          The 1+ year journey
+          The {fc.period} journey
         </Reveal>
         <div className="timeline flagship-timeline" ref={trackRef}>
           <div className="timeline-track" />
