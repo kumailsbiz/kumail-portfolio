@@ -664,6 +664,22 @@
   font-size: 13px;
   font-weight: 600;
 }
+.case-image-slot-filled {
+  padding: 0;
+  overflow: hidden;
+}
+.case-image-slot-filled img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+.case-image-slot-filled:hover img {
+  filter: grayscale(0);
+}
 .case-image-caption {
   margin: 12px 0 0;
   font-size: 12px;

@@ -109,10 +109,22 @@ export default function CaseStudies() {
                       )}
                     </div>
                     <div>
-                      <div className="case-image-slot grayscale">
-                        <span>{c.imagePlaceholder}</span>
-                      </div>
-                      <p className="case-image-caption">Placeholder — awaiting screenshot</p>
+                      {c.image ? (
+                        <div className="case-image-slot case-image-slot-filled">
+                          <img
+                            src={c.image}
+                            alt={`${c.title} — storefront screenshot`}
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <div className="case-image-slot grayscale">
+                          <span>{c.imagePlaceholder}</span>
+                        </div>
+                      )}
+                      <p className="case-image-caption">
+                        {c.image ? "Live storefront" : "Placeholder — awaiting screenshot"}
+                      </p>
                     </div>
                   </div>
                 )}
