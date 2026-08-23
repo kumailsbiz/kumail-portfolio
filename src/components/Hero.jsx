@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { profile } from "../data";
 import useMagnetic from "../hooks/useMagnetic";
+import useTilt from "../hooks/useTilt";
+import useParallax from "../hooks/useParallax";
 
 function IconArrow() {
   return (
@@ -52,6 +54,9 @@ export default function Hero() {
   const [parallax, setParallax] = useState(0);
   const workRef = useMagnetic();
   const resumeRef = useMagnetic();
+  const portraitTiltRef = useTilt({ max: 6, scale: 1.015 });
+  const shapeFarRef = useParallax(0.35);
+  const shapeNearRef = useParallax(-0.2);
 
   useEffect(() => {
     const t = requestAnimationFrame(() => setReady(true));
@@ -92,6 +97,10 @@ export default function Hero() {
 
   return (
     <section id="top" className="hero">
+      <div className="hero-decor" aria-hidden="true">
+        <span className="hero-shape hero-shape-far" ref={shapeFarRef} />
+        <span className="hero-shape hero-shape-near" ref={shapeNearRef} />
+      </div>
       <div className="hero-inner" data-hero-grid>
         <div>
           <p className="hero-eyebrow" style={{ ...fadeStyle(0), transitionDuration: "0.55s" }}>
@@ -147,7 +156,7 @@ export default function Hero() {
               : "translateY(28px)",
           }}
         >
-          <div className="hero-portrait-frame grayscale">
+          <div className="hero-portrait-frame grayscale" ref={portraitTiltRef}>
             <img src={profile.photoUrl} alt={`Portrait of ${profile.name}`} />
           </div>
           <div className="hero-portrait-badge">4+ years</div>

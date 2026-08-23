@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { profile } from "../data";
 
 const NAV = [
@@ -10,8 +11,28 @@ const NAV = [
 ];
 
 export default function Header({ dark, onToggleTheme }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    let raf = null;
+    const check = () => {
+      raf = null;
+      setScrolled(window.scrollY > 24);
+    };
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(check);
+    };
+    check();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <a href="#top" className="header-brand">
           {profile.name}

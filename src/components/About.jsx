@@ -10,7 +10,7 @@ export default function About() {
         </Reveal>
         <div className="about-grid" data-two-col>
           <div>
-            <Reveal as="h2" className="about-headline">
+            <Reveal as="h2" variant="tilt" className="about-headline">
               {about.headline}
             </Reveal>
             <Reveal as="p" className="about-body" delay={1}>

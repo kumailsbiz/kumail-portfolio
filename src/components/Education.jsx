@@ -8,7 +8,7 @@ export default function Education() {
         <Reveal as="p" className="eyebrow">
           06 — Background
         </Reveal>
-        <Reveal as="h2" className="section-title">
+        <Reveal as="h2" variant="tilt" className="section-title">
           Education &amp; certifications
         </Reveal>
         <div className="edu-grid">

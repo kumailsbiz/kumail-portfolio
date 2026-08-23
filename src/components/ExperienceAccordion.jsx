@@ -37,7 +37,7 @@ export default function ExperienceAccordion() {
             <Reveal as="p" className="eyebrow">
               02 — Experience
             </Reveal>
-            <Reveal as="h2" className="section-title">
+            <Reveal as="h2" variant="tilt" className="section-title">
               Professional experience
             </Reveal>
           </div>

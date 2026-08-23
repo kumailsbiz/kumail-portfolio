@@ -11,7 +11,7 @@ export default function Contact() {
         <Reveal as="p" className="eyebrow eyebrow-on-accent">
           07 — Contact
         </Reveal>
-        <Reveal as="h2" className="contact-headline">
+        <Reveal as="h2" variant="tilt" className="contact-headline">
           Let's work together
         </Reveal>
         <Reveal as="p" className="contact-lead">

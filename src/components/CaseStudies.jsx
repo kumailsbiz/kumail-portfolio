@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { caseStudies } from "../data";
 import Reveal from "./Reveal";
+import useTilt from "../hooks/useTilt";
+import { getGsap } from "../lib/motion";
 
 function PlusMinus({ open }) {
   return (
@@ -11,8 +13,27 @@ function PlusMinus({ open }) {
   );
 }
 
+function CaseImage({ c }) {
+  const tiltRef = useTilt({ max: 5, scale: 1.015 });
+  return (
+    <div className="case-image-slot case-image-slot-filled" ref={tiltRef}>
+      <img src={c.image} alt={`${c.title} — storefront screenshot`} loading="lazy" />
+    </div>
+  );
+}
+
 export default function CaseStudies() {
   const [open, setOpen] = useState(null);
+
+  const toggle = (i) => {
+    setOpen((o) => (o === i ? null : i));
+    // Row heights change on expand/collapse — let ScrollTrigger re-measure
+    // everything below so later reveals still fire at the right scroll spot.
+    requestAnimationFrame(() => {
+      const { ScrollTrigger } = getGsap();
+      ScrollTrigger.refresh();
+    });
+  };
 
   return (
     <section id="work" className="section">
@@ -20,7 +41,7 @@ export default function CaseStudies() {
         <Reveal as="p" className="eyebrow">
           04 — Selected work
         </Reveal>
-        <Reveal as="h2" className="section-title" style={{ marginBottom: 18 }}>
+        <Reveal as="h2" variant="tilt" className="section-title" style={{ marginBottom: 18 }}>
           Technical &amp; platform work
         </Reveal>
         <Reveal as="p" className="section-lead">
@@ -39,7 +60,7 @@ export default function CaseStudies() {
                   type="button"
                   className="case-row"
                   aria-expanded={isOpen}
-                  onClick={() => setOpen((o) => (o === i ? null : i))}
+                  onClick={() => toggle(i)}
                 >
                   <span className="case-id">{c.id}</span>
                   <span>
@@ -110,13 +131,7 @@ export default function CaseStudies() {
                     </div>
                     <div>
                       {c.image ? (
-                        <div className="case-image-slot case-image-slot-filled">
-                          <img
-                            src={c.image}
-                            alt={`${c.title} — storefront screenshot`}
-                            loading="lazy"
-                          />
-                        </div>
+                        <CaseImage c={c} />
                       ) : (
                         <div className="case-image-slot grayscale">
                           <span>{c.imagePlaceholder}</span>

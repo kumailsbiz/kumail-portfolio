@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { profile } from "../data";
 import Reveal from "./Reveal";
 import useMagnetic from "../hooks/useMagnetic";
+import useTilt from "../hooks/useTilt";
+import { getGsap } from "../lib/motion";
 
 const LANG_COLORS = {
   JavaScript: "#f1e05a",
@@ -30,6 +32,52 @@ function relativeDate(iso) {
 }
 
 const MAX_REPOS = 6;
+
+function RepoCard({ r }) {
+  const tiltRef = useTilt({ max: 4, scale: 1.015 });
+  return (
+    <Reveal as="a" variant="scale" y={14} duration={0.6}
+      ref={tiltRef}
+      href={r.html_url}
+      target="_blank"
+      rel="noreferrer"
+      className="repo-card"
+    >
+      <span className="repo-card-head">
+        <span className="repo-name">{r.name}</span>
+        <span className="repo-updated">{relativeDate(r.pushed_at)}</span>
+      </span>
+      <span className="repo-desc">{r.description || "No description provided on GitHub."}</span>
+      <span className="repo-meta-row">
+        <span className="repo-meta-item">
+          <span className="lang-dot" style={{ background: colorFor(r.language) }} />
+          {r.language || "—"}
+        </span>
+        <span className="repo-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="m12 3 2.9 5.9 6.6.9-4.8 4.6 1.2 6.5L12 17.8 6.1 20.9l1.2-6.5L2.5 9.8l6.6-.9L12 3Z" />
+          </svg>
+          {fmt(r.stargazers_count)}
+        </span>
+        <span className="repo-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="6" cy="5" r="2.5" />
+            <circle cx="18" cy="5" r="2.5" />
+            <circle cx="12" cy="19" r="2.5" />
+            <path d="M6 7.5v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-3M12 13.5v3" />
+          </svg>
+          {fmt(r.forks_count)}
+        </span>
+        <span className="repo-open">
+          Open
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </span>
+      </span>
+    </Reveal>
+  );
+}
 
 export default function GitHubPanel() {
   const [status, setStatus] = useState("loading");
@@ -108,6 +156,13 @@ export default function GitHubPanel() {
     };
   }, []);
 
+  useEffect(() => {
+    if (status === "loading") return;
+    const { ScrollTrigger } = getGsap();
+    const t = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => cancelAnimationFrame(t);
+  }, [status]);
+
   const meta = user
     ? [user.name, user.location].filter(Boolean).join(" · ") || `github.com/${profile.github}`
     : `github.com/${profile.github}`;
@@ -125,7 +180,7 @@ export default function GitHubPanel() {
           <Reveal as="p" className="eyebrow">
             05 — Open source
           </Reveal>
-          <Reveal as="h2" className="section-title" style={{ fontSize: "clamp(26px, 3vw, 40px)", marginBottom: 18 }}>
+          <Reveal as="h2" variant="tilt" className="section-title" style={{ fontSize: "clamp(26px, 3vw, 40px)", marginBottom: 18 }}>
             GitHub
           </Reveal>
           <Reveal as="p" className="section-lead" style={{ maxWidth: "44ch", marginBottom: 24 }}>
@@ -226,48 +281,7 @@ export default function GitHubPanel() {
               <h3 className="sub-label">Repositories</h3>
               <div className="repo-list">
                 {visibleRepos.map((r) => (
-                  <a
-                    key={r.id}
-                    href={r.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="repo-card"
-                  >
-                    <span className="repo-card-head">
-                      <span className="repo-name">{r.name}</span>
-                      <span className="repo-updated">{relativeDate(r.pushed_at)}</span>
-                    </span>
-                    <span className="repo-desc">
-                      {r.description || "No description provided on GitHub."}
-                    </span>
-                    <span className="repo-meta-row">
-                      <span className="repo-meta-item">
-                        <span className="lang-dot" style={{ background: colorFor(r.language) }} />
-                        {r.language || "—"}
-                      </span>
-                      <span className="repo-meta-item">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="m12 3 2.9 5.9 6.6.9-4.8 4.6 1.2 6.5L12 17.8 6.1 20.9l1.2-6.5L2.5 9.8l6.6-.9L12 3Z" />
-                        </svg>
-                        {fmt(r.stargazers_count)}
-                      </span>
-                      <span className="repo-meta-item">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <circle cx="6" cy="5" r="2.5" />
-                          <circle cx="18" cy="5" r="2.5" />
-                          <circle cx="12" cy="19" r="2.5" />
-                          <path d="M6 7.5v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-3M12 13.5v3" />
-                        </svg>
-                        {fmt(r.forks_count)}
-                      </span>
-                      <span className="repo-open">
-                        Open
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M7 17 17 7M9 7h8v8" />
-                        </svg>
-                      </span>
-                    </span>
-                  </a>
+                  <RepoCard r={r} key={r.id} />
                 ))}
               </div>
               <p className="github-footnote">{footnote}</p>

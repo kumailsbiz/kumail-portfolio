@@ -5,6 +5,10 @@
   z-index: 50;
   background: var(--color-bg);
   border-bottom: 2px solid var(--color-text);
+  transition: box-shadow 0.35s ease;
+}
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-md);
 }
 .header-inner {
   max-width: var(--max-width);
@@ -14,6 +18,10 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.is-scrolled .header-inner {
+  height: 58px;
 }
 .header-brand {
   font-family: var(--font-heading);
@@ -167,8 +175,44 @@
 /* ===================== Hero ===================== */
 .hero {
   border-bottom: 2px solid var(--color-text);
+  position: relative;
+  overflow: hidden;
+}
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-shape {
+  position: absolute;
+  border: 2px solid var(--color-accent);
+  opacity: 0.16;
+}
+.hero-shape-far {
+  width: clamp(220px, 26vw, 380px);
+  height: clamp(220px, 26vw, 380px);
+  border-radius: 50%;
+  right: -8%;
+  top: -10%;
+}
+.hero-shape-near {
+  width: clamp(120px, 14vw, 200px);
+  height: clamp(120px, 14vw, 200px);
+  right: 18%;
+  bottom: -6%;
+  transform: rotate(18deg);
+}
+@media (max-width: 860px) {
+  .hero-shape-far,
+  .hero-shape-near {
+    opacity: 0.1;
+  }
 }
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: clamp(48px, 8vh, 96px) var(--page-pad) clamp(36px, 5vh, 64px);
@@ -504,23 +548,35 @@
 .section-skills {
   padding-bottom: clamp(40px, 6vh, 64px);
 }
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.skill-pin {
+  overflow: hidden;
+}
+.skill-track {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0;
   border-top: 2px solid var(--color-text);
   border-left: 2px solid var(--color-text);
 }
 .skill-cell {
+  flex: 1 1 300px;
+  min-width: 300px;
   border-right: 2px solid var(--color-text);
   border-bottom: 2px solid var(--color-text);
   padding: clamp(20px, 2.4vw, 30px);
   background: var(--color-bg);
-  transition: background 0.25s ease, transform 0.3s ease;
+  transition: background 0.25s ease;
 }
 .skill-cell:hover {
   background: var(--color-accent-100);
-  transform: translateY(-5px);
+}
+.skill-pin-active .skill-track {
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+.skill-pin-active .skill-track .skill-cell {
+  flex: 0 0 clamp(280px, 26vw, 360px);
+  min-width: 0;
 }
 .skill-cell h3 {
   margin: 0 0 12px;
