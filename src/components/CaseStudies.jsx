@@ -22,6 +22,28 @@ function CaseImage({ c }) {
   );
 }
 
+function CaseGalleryImage({ img, title }) {
+  const tiltRef = useTilt({ max: 5, scale: 1.015 });
+  return (
+    <div className="case-gallery-item">
+      <div className="case-image-slot case-image-slot-filled" ref={tiltRef}>
+        <img src={img.src} alt={`${title} — ${img.caption}`} loading="lazy" />
+      </div>
+      <p className="case-image-caption">{img.caption}</p>
+    </div>
+  );
+}
+
+function CaseGallery({ c }) {
+  return (
+    <div className="case-gallery">
+      {c.images.map((img) => (
+        <CaseGalleryImage img={img} title={c.title} key={img.src} />
+      ))}
+    </div>
+  );
+}
+
 export default function CaseStudies() {
   const [open, setOpen] = useState(null);
 
@@ -130,16 +152,21 @@ export default function CaseStudies() {
                       )}
                     </div>
                     <div>
-                      {c.image ? (
-                        <CaseImage c={c} />
+                      {c.images ? (
+                        <CaseGallery c={c} />
+                      ) : c.image ? (
+                        <>
+                          <CaseImage c={c} />
+                          <p className="case-image-caption">Live storefront</p>
+                        </>
                       ) : (
-                        <div className="case-image-slot grayscale">
-                          <span>{c.imagePlaceholder}</span>
-                        </div>
+                        <>
+                          <div className="case-image-slot grayscale">
+                            <span>{c.imagePlaceholder}</span>
+                          </div>
+                          <p className="case-image-caption">Placeholder — awaiting screenshot</p>
+                        </>
                       )}
-                      <p className="case-image-caption">
-                        {c.image ? "Live storefront" : "Placeholder — awaiting screenshot"}
-                      </p>
                     </div>
                   </div>
                 )}

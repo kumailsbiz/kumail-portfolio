@@ -345,7 +345,13 @@ export const caseStudies = [
     result: null,
     tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
     imageId: "case-insta360",
-    image: "assets/case-studies/insta360.jpg",
+    images: [
+      { src: "assets/case-studies/insta360-home.jpg", caption: "Storefront — insta360.ae" },
+      {
+        src: "assets/case-studies/insta360-product.jpg",
+        caption: "Product page — Insta360 Luna Ultra",
+      },
+    ],
     imagePlaceholder: "Drop an Insta360.ae storefront screenshot",
     cta: { label: "Visit insta360.ae", href: "https://insta360.ae/" },
   },
