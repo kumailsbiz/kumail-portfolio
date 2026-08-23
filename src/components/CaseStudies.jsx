@@ -14,7 +14,7 @@ function PlusMinus({ open }) {
 }
 
 function CaseImage({ c }) {
-  const tiltRef = useTilt({ max: 5, scale: 1.015 });
+  const tiltRef = useTilt({ max: 7, scale: 1.025 });
   return (
     <div className="case-image-slot case-image-slot-filled" ref={tiltRef}>
       <img src={c.image} alt={`${c.title} — storefront screenshot`} loading="lazy" />
@@ -23,7 +23,7 @@ function CaseImage({ c }) {
 }
 
 function CaseGalleryImage({ img, title }) {
-  const tiltRef = useTilt({ max: 5, scale: 1.015 });
+  const tiltRef = useTilt({ max: 7, scale: 1.025 });
   return (
     <div className="case-gallery-item">
       <div className="case-image-slot case-image-slot-filled" ref={tiltRef}>
@@ -67,7 +67,7 @@ export default function CaseStudies() {
           Technical &amp; platform work
         </Reveal>
         <Reveal as="p" className="section-lead">
-          Seven bodies of work drawn from the roles above — three of them live brand storefronts.
+          Eight bodies of work drawn from the roles above — four of them live brand storefronts.
           Each expands into the brief, what was built, and the stack. Where a result is not
           published, the scope is stated instead — no numbers are claimed that are not in the
           record.
