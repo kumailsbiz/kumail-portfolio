@@ -267,6 +267,66 @@ export const caseStudies = [
       href: "https://github.com/kumailsbiz/kumail-portfolio",
     },
   },
+  {
+    id: "C5",
+    title: "Insta360 UAE — official brand storefront",
+    meta: "insta360.ae · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
+    role: "Storefront owner and performance lead — Shopify build, catalog, paid media, SEO and tracking for the official Insta360 UAE store.",
+    challenge:
+      "A single-brand flagship inside a 51-brand portfolio: the 360°, action camera and gimbal catalog, seasonal bundles and paid campaigns all have to read as premium and stay in step with Insta360's own product drops.",
+    approach: [
+      "Shopify storefront built and maintained, including custom Liquid sections for product bundles and category landers.",
+      "Catalog and pricing kept current across 360 cameras, action cameras, gimbals and accessories as new models launch.",
+      "Google Ads and paid social campaigns planned, launched and optimized to drive qualified traffic to camera and bundle pages.",
+      "On-site SEO and GA4/GTM tracking implemented to connect campaign spend to storefront performance.",
+    ],
+    scope: null,
+    result: null,
+    tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
+    imageId: "case-insta360",
+    imagePlaceholder: "Drop an Insta360.ae storefront screenshot",
+    cta: { label: "Visit insta360.ae", href: "https://insta360.ae/" },
+  },
+  {
+    id: "C6",
+    title: "DXB.net — multi-brand tech & lifestyle store",
+    meta: "dxb.net · Shopify, Liquid, Google Ads, Meta, TikTok · SHIFT portfolio",
+    role: "Storefront owner and performance lead — Shopify build, merchandising and paid media across a multi-brand catalog.",
+    challenge:
+      "A curated multi-brand marketplace spanning smart home, mobile accessories, wearables, audio and travel tech, where merchandising, pricing and campaigns all have to work across dozens of brands sold on one storefront.",
+    approach: [
+      "Shopify storefront built and run, including custom Liquid sections for brand and category landing pages.",
+      "Catalog, pricing and collections managed across a wide multi-brand SKU range, including open-box and promotional sections.",
+      "Google Ads, Meta and TikTok campaigns planned and optimized across the full catalog.",
+      "SEO and GA4/GTM tracking implemented to support organic visibility and campaign measurement.",
+    ],
+    scope: null,
+    result: null,
+    tags: ["Shopify", "Liquid", "Google Ads", "Meta Ads", "TikTok Ads", "GA4"],
+    imageId: "case-dxb",
+    imagePlaceholder: "Drop a DXB.net storefront screenshot",
+    cta: { label: "Visit dxb.net", href: "https://dxb.net/" },
+  },
+  {
+    id: "C7",
+    title: "Xgimi UAE — official brand storefront",
+    meta: "xgimi.ae · Shopify, Liquid, Google Ads, GA4 · SHIFT portfolio",
+    role: "Storefront owner and performance lead — Shopify build, catalog and paid media for the official Xgimi UAE store.",
+    challenge:
+      "A premium projector brand's UAE storefront spanning home, portable and laser projector lines, where product education on specs and use cases has to convert alongside paid traffic.",
+    approach: [
+      "Shopify storefront built and maintained, including custom Liquid sections for product comparisons and category pages.",
+      "Catalog and pricing kept current across the Horizon, MoGo and Aura projector lines.",
+      "Google Ads campaigns planned, launched and optimized to drive qualified traffic to flagship product pages.",
+      "On-site SEO and tracking implemented to support both organic and paid performance.",
+    ],
+    scope: null,
+    result: null,
+    tags: ["Shopify", "Liquid", "Google Ads", "GA4", "SEO"],
+    imageId: "case-xgimi",
+    imagePlaceholder: "Drop an Xgimi.ae storefront screenshot",
+    cta: { label: "Visit xgimi.ae", href: "https://xgimi.ae/" },
+  },
 ];
 
 export const education = [

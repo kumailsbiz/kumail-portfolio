@@ -24,9 +24,10 @@ export default function CaseStudies() {
           Technical &amp; platform work
         </Reveal>
         <Reveal as="p" className="section-lead">
-          Four bodies of work drawn from the roles above. Each expands into the brief, what was
-          built, and the stack. Where a result is not published, the scope is stated instead — no
-          numbers are claimed that are not in the record.
+          Seven bodies of work drawn from the roles above — three of them live brand storefronts.
+          Each expands into the brief, what was built, and the stack. Where a result is not
+          published, the scope is stated instead — no numbers are claimed that are not in the
+          record.
         </Reveal>
 
         <div className="case-list">
