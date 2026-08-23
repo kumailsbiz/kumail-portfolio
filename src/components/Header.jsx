@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { profile } from "../data";
 
 const NAV = [
+  { href: "#results", label: "Results" },
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },

@@ -5,6 +5,7 @@ import useScrollSetup from "./hooks/useScrollSetup";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
+import FlagshipCaseStudy from "./components/FlagshipCaseStudy";
 import About from "./components/About";
 import ExperienceAccordion from "./components/ExperienceAccordion";
 import Skills from "./components/Skills";
@@ -24,6 +25,7 @@ export default function App() {
       <main>
         <Hero />
         <StatsBar />
+        <FlagshipCaseStudy />
         <About />
         <ExperienceAccordion />
         <Skills />

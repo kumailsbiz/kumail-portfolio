@@ -1114,6 +1114,252 @@
   font-weight: 400;
 }
 
+/* ===================== Flagship case study ===================== */
+.section-flagship {
+  position: relative;
+}
+.flagship-subhead {
+  max-width: 68ch;
+  margin-bottom: 22px;
+}
+.flagship-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(28px, 4vh, 40px);
+}
+
+.flagship-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(20px, 3vw, 32px) 0;
+  border-top: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  margin-bottom: clamp(24px, 3.5vh, 36px);
+}
+.flagship-chain-node-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.flagship-chain-node {
+  display: inline-block;
+  border: 2px solid var(--color-text);
+  background: var(--color-bg);
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(12px, 1.3vw, 15px);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.flagship-chain-node-wrap:last-child .flagship-chain-node {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+.flagship-chain-arrow {
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.flagship-headline {
+  margin: 0 0 clamp(28px, 4vh, 40px);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 32px);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--color-accent-700);
+}
+
+.flagship-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0;
+  border-top: 2px solid var(--color-text);
+  border-left: 2px solid var(--color-text);
+  margin-bottom: clamp(24px, 3.5vh, 36px);
+}
+.flagship-kpi {
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  padding: clamp(18px, 2.2vw, 26px) clamp(16px, 2vw, 22px);
+  transition: background 0.25s ease;
+  min-width: 0;
+}
+.flagship-kpi:hover {
+  background: var(--color-accent-100);
+}
+.flagship-kpi-value {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(17px, 1.6vw, 23px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+.flagship-kpi-label {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+}
+
+.flagship-net {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  border: 2px solid var(--color-text);
+  background: var(--color-surface);
+  padding: clamp(18px, 2.4vw, 26px);
+  margin-bottom: clamp(32px, 4.5vh, 48px);
+}
+.flagship-net-value {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(22px, 2.6vw, 30px);
+  letter-spacing: -0.02em;
+}
+.flagship-net-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+.flagship-net-note {
+  flex-basis: 100%;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-neutral-700);
+}
+
+.market-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(28px, 4vh, 44px) 0;
+  margin-bottom: clamp(32px, 4.5vh, 48px);
+}
+.market-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid var(--color-text);
+  background: var(--color-bg);
+  padding: clamp(22px, 3vw, 32px) clamp(24px, 4vw, 44px);
+  text-align: center;
+  flex: 0 0 auto;
+}
+.market-flag {
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1;
+}
+.market-code {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(16px, 1.8vw, 20px);
+  letter-spacing: 0.04em;
+}
+.market-name {
+  font-size: 12px;
+  color: var(--color-neutral-700);
+}
+.market-connector {
+  position: relative;
+  flex: 1 1 60px;
+  min-width: 40px;
+  max-width: 140px;
+  height: 2px;
+}
+.market-connector-line {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-accent) 0,
+    var(--color-accent) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+.market-connector-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: om-connector-travel 2.6s ease-in-out infinite;
+}
+@keyframes om-connector-travel {
+  0%, 100% { left: 0%; }
+  50% { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .market-connector-dot {
+    animation: none;
+    left: 50%;
+  }
+}
+
+.flagship-timeline-label {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(15px, 1.6vw, 18px);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 clamp(20px, 3vh, 28px);
+}
+.flagship-timeline {
+  margin-bottom: clamp(28px, 4vh, 40px);
+}
+.flagship-timeline-item {
+  padding-bottom: clamp(24px, 3.5vh, 36px);
+}
+.flagship-phase-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+.flagship-milestone-title {
+  margin: 0 0 6px;
+  font-size: clamp(16px, 1.7vw, 19px);
+  letter-spacing: -0.01em;
+}
+.flagship-milestone-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-neutral-700);
+  max-width: 62ch;
+}
+
+.flagship-disclaimer {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-neutral-700);
+  border-top: 2px solid var(--color-divider);
+  padding-top: 16px;
+  max-width: 72ch;
+}
+
 /* ===================== Responsive ===================== */
 @media (max-width: 1080px) {
   .hero-inner {
@@ -1133,4 +1379,30 @@
   .header-nav {
     display: none;
   }
+  .market-panel {
+    flex-direction: column;
+  }
+  .market-connector {
+    width: 2px;
+    height: 40px;
+    max-width: none;
+  }
+  .market-connector-line {
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--color-accent) 0,
+      var(--color-accent) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+  }
+  .market-connector-dot {
+    animation-name: om-connector-travel-v;
+    left: 50%;
+    top: 0;
+  }
+}
+@keyframes om-connector-travel-v {
+  0%, 100% { top: 0%; }
+  50% { top: 100%; }
 }

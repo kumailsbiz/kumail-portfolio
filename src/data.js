@@ -15,6 +15,67 @@ export const profile = {
     "Multi-brand online retail, marketplaces and paid media across the UAE and KSA. One person setting the merchandising strategy, building the campaigns behind it, shipping the storefront, and reading the analytics that decide what happens next.",
 };
 
+export const flagshipCase = {
+  eyebrow: "Flagship result",
+  title: "UAE & KSA Performance Marketing — 1+ Year",
+  subhead:
+    "Cumulative Google Ads performance across the UAE and Saudi Arabia — one ongoing program, run and optimized continuously for more than a year. Not a single campaign, and not a short-term promotion.",
+  markets: [
+    { flag: "🇦🇪", code: "UAE", name: "United Arab Emirates" },
+    { flag: "🇸🇦", code: "KSA", name: "Saudi Arabia" },
+  ],
+  channel: "Google Ads / PPC",
+  period: "1+ year",
+  chain: ["UAE + KSA", "1+ Year", "AED 12K Ad Spend", "AED 400K Sales", "33.3× ROAS"],
+  headline: "33.3× ROAS · 3% ACoS · 3,233% Ad-Spend ROI",
+  kpis: [
+    { value: 400000, prefix: "AED ", label: "Sales generated" },
+    { value: 12000, prefix: "AED ", label: "Total ad spend" },
+    { value: 33.33, decimals: 2, suffix: "×", label: "ROAS" },
+    { value: 3, suffix: "%", label: "ACoS" },
+    { value: 3233.33, decimals: 2, suffix: "%", label: "Ad-spend ROI" },
+    { value: 33.33, decimals: 2, suffix: "×", label: "Revenue multiple" },
+  ],
+  net: {
+    value: "AED 388,000",
+    note: "Net after ad spend — before product costs, platform fees, shipping, and other business expenses.",
+  },
+  timeline: [
+    {
+      phase: "Launch",
+      title: "UAE campaigns go live",
+      body: "Google Ads structure built and launched for the UAE catalog — Search and Shopping, with GA4 and conversion tracking wired in from day one.",
+    },
+    {
+      phase: "Optimization",
+      title: "Keyword & bid refinement",
+      body: "Negative keywords, search-term mining and bid strategy tuning bring cost per acquisition down as real conversion data accumulates.",
+    },
+    {
+      phase: "Scaling",
+      title: "Budget scaled against proven ROAS",
+      body: "Spend increased on the campaigns and products already converting, pulled back on the ones that weren't.",
+    },
+    {
+      phase: "KSA expansion",
+      title: "Second market launched",
+      body: "The same structure, tracking and optimization cadence stood up for Saudi Arabia, running alongside the ongoing UAE program.",
+    },
+    {
+      phase: "Testing",
+      title: "Continuous ad & audience testing",
+      body: "Ad copy, creative and audience testing kept running across both markets rather than stopping once a campaign started working.",
+    },
+    {
+      phase: "Sustained growth",
+      title: "1+ year, AED 400K cumulative",
+      body: "Results compounding over the full period — AED 400,000 in sales from AED 12,000 in ad spend, cumulative across the UAE and KSA.",
+    },
+  ],
+  disclaimer:
+    "All figures are cumulative results from an ongoing Google Ads program across the UAE and KSA over 1+ year — not the output of a single campaign or short-term promotion.",
+};
+
 export const stats = [
   { value: 4, suffix: "+", label: "Years experience" },
   { value: 51, suffix: "+", label: "Brands owned" },
